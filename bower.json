@@ -1,0 +1,22 @@
+{
+  "name": "frontkick",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "bootstrap-sass-official": "~3.3.1"
+  },
+  "overrides": {
+    "bootstrap-sass-official": {
+      "main": [
+        "assets/**/*"
+      ]
+    },
+    "jquery": {
+      "ignore": true
+    }
+  }
+}
