@@ -39,31 +39,24 @@ stylesheets[all][] = css/style.css
 ; ;; Scripts
 ; ;;;;;;;;;;;;;;;;;;;;;
 ;
-; scripts[] = '../vendor/bootstrap-sass-official/assets/javascripts/bootstrap/js/affix.js'
-; scripts[] = '../vendor/bootstrap-sass-official/assets/javascripts/bootstrap/js/alert.js'
-; scripts[] = '../vendor/bootstrap-sass-official/assets/javascripts/bootstrap/js/button.js'
-; scripts[] = '../vendor/bootstrap-sass-official/assets/javascripts/bootstrap/js/carousel.js'
-; scripts[] = '../vendor/bootstrap-sass-official/assets/javascripts/bootstrap/js/collapse.js'
-; scripts[] = '../vendor/bootstrap-sass-official/assets/javascripts/bootstrap/js/dropdown.js'
-; scripts[] = '../vendor/bootstrap-sass-official/assets/javascripts/bootstrap/js/modal.js'
-; scripts[] = '../vendor/bootstrap-sass-official/assets/javascripts/bootstrap/js/popover.js'
-; scripts[] = '../vendor/bootstrap-sass-official/assets/javascripts/bootstrap/js/scrollspy.js'
-; scripts[] = '../vendor/bootstrap-sass-official/assets/javascripts/bootstrap/js/tab.js'
-; scripts[] = '../vendor/bootstrap-sass-official/assets/javascripts/bootstrap/js/tooltip.js'
-; scripts[] = '../vendor/bootstrap-sass-official/assets/javascripts/bootstrap/js/transition.js'
+scripts[] = '/vendor/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js'
+scripts[] = '/vendor/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js'
+scripts[] = '/vendor/bootstrap-sass-official/assets/javascripts/bootstrap/button.js'
+scripts[] = '/vendor/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js'
+scripts[] = '/vendor/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js'
+scripts[] = '/vendor/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js'
+scripts[] = '/vendor/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js'
+scripts[] = '/vendor/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js'
+scripts[] = '/vendor/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js'
+scripts[] = '/vendor/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js'
+scripts[] = '/vendor/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js'
+scripts[] = '/vendor/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js'
 ;
-; ; Disable BootstrapCDN if using Bootstrap source files in your sub-theme.
+; Disable BootstrapCDN if using Bootstrap source files in your sub-theme.
 settings[bootstrap_cdn] = ''
 
 
-; ;-------------------------
-; ; METHOD 2: Bootstrap CDN
-; ;-------------------------
-;
-; Method 2 uses BootstrapCDN, the only thing you might need to provide here
-; is overrides to Bootstrap theme settings. Copy them here from the base theme
-; to override.
-
+; Theme default settings
 settings[bootstrap_tooltip_descriptions] = 0
-settings[bootstrap-rebuild-registry] = 1
+settings[bootstrap_rebuild_registry] = 1
 
