@@ -58,5 +58,4 @@ settings[bootstrap_cdn] = ''
 
 ; Theme default settings
 settings[bootstrap_tooltip_descriptions] = 0
-settings[bootstrap_rebuild_registry] = 1
 
