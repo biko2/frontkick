@@ -5,7 +5,7 @@ var gulp = require('gulp'),
     requireDir = require('require-dir')('./gulp_tasks');
 
 
-gulp.task('watch', ['styles:watch']);
+gulp.task('watch', ['styles:watch', 'doc:watch']);
 
 
 gulp.task('compile', function(done) {
