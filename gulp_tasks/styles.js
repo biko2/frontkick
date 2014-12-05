@@ -29,11 +29,11 @@ gulp.task('styles', function () {
     .pipe($.sass({ precision: 10 }))
     .pipe($.autoprefixer('last 2 version', '> 1%', 'ie >= 8', 'Opera 12.1'))
     .pipe(gulp.dest(cssDestinationPath))
-    .pipe(reload({stream:true}))
+    // .pipe(reload({stream:true}))
     .pipe($.notify("Compilación CSS terminada"));
   return cb;
 });
 
 gulp.task('styles:watch', function() {
-  gulp.watch([srcPath + "/**/*"], ['styles']);
+  gulp.watch([srcPath + "/**/*"], ['styles'], reload);
 });

@@ -1,3 +1,4 @@
 node_modules
 bower_components
-docs
+styleguide
+config_overrides.json
