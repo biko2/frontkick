@@ -17,7 +17,8 @@
     "main-bower-files": "^2.4.1",
     "node-notifier": "^4.0.2",
     "require-dir": "^0.1.0",
-    "run-sequence": "^1.0.1"
+    "run-sequence": "^1.0.1",
+    "underscore": "^1.7.0"
   },
   "engines": {
     "node": ">=0.10.0"

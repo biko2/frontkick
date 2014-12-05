@@ -4,15 +4,17 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync'),
     runSequence = require('run-sequence'),
     requireDir = require('require-dir')('./gulp_tasks');
+var _ = require('underscore');
 
 var config = require('./config.json');
 var local_config = require('./config_overrides.json');
+_.extend(config, local_config);
 
 var $ = require('gulp-load-plugins')();
 
 gulp.task('browser-sync', function() {
     browserSync({
-        proxy: local_config.proxy
+        proxy: config.proxy
     });
 });
 
