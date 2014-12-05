@@ -3,8 +3,8 @@
 var gulp = require('gulp'),
     browserSync = require('browser-sync'),
     runSequence = require('run-sequence'),
-    requireDir = require('require-dir')('./gulp_tasks');
-var _ = require('underscore');
+    requireDir = require('require-dir')('./gulp_tasks'),
+    _ = require('underscore');
 
 var config = require('./config.json');
 var local_config = require('./config_overrides.json');
@@ -19,15 +19,6 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('watch', ['browser-sync', 'styles:watch', 'styleguide:watch']);
-
-
-gulp.task('compile', function(done) {
-  runSequence('styles', done);
-});
-
-// ****************************************************
-// Tarea por defecto
-// ****************************************************
 
 gulp.task('default', function(done) {
   runSequence(['bower', 'styles', 'styleguide', 'watch'], done);
