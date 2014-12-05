@@ -1,0 +1,11 @@
+Drupal starter theme based on Boostrap. Uses Sass and gulp.
+
+## Installation
+`bundle install`
+`npm install -g gulp`
+`npm install`
+
+Create a config_overrides.json file and put your config overrides there (e.g. browser-sync proxy path)
+
+## Commands
+gulp
