@@ -1,3 +1,17 @@
 {
-	
+  "styles": {
+    "srcPath": "scss",
+    "srcFiles": "scss/**/*",
+    "srcMainFiles": ["scss/*.scss", "!scss/_*.scss"],
+    "dest": "css"
+  },
+
+  "styleguide": {
+    "srcFiles": "doc_assets/**/*"
+  },
+
+  "bower": {
+    "src": "bower_components",
+    "dest": "vendor"
+  } 
 }

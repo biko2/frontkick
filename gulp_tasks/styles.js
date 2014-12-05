@@ -1,13 +1,17 @@
 'use strict';
 
-var srcPath = "scss",
-    fileExtension = ".scss",
-	cssDestinationPath = "css",
-    gulp = require('gulp'),
+var gulp = require('gulp'),
     browserSync = require('browser-sync'),
     reload = browserSync.reload,
     nn = require('node-notifier'),
-    $ = require('gulp-load-plugins')();
+    $ = require('gulp-load-plugins')(),
+    config = require('../config.js');
+
+
+var srcFiles = config.styles.srcFiles,
+    srcMainFiles = config.styles.srcMainFiles,
+    srcPath = config.styles.srcPath,
+    dest = config.styles.dest;
 
 function errorHandler(error, error_type) {
 	var notifier = new nn.NotificationCenter();
@@ -19,21 +23,17 @@ function errorHandler(error, error_type) {
 	this.emit('end');
 }
 
-// ****************************************************
-// Compila CSS
-// ****************************************************
 gulp.task('styles', function () {
   var cb = gulp
-    .src([srcPath + "/*" + fileExtension, "!" + srcPath + "/_" + fileExtension ], { base: srcPath })
+    .src(srcMainFiles, { base: srcPath })
     .pipe($.plumber({ errorHandler: errorHandler }))
     .pipe($.sass({ precision: 10 }))
     .pipe($.autoprefixer('last 2 version', '> 1%', 'ie >= 8', 'Opera 12.1'))
-    .pipe(gulp.dest(cssDestinationPath))
-    // .pipe(reload({stream:true}))
+    .pipe(gulp.dest(dest))
     .pipe($.notify("Compilación CSS terminada"));
   return cb;
 });
 
 gulp.task('styles:watch', function() {
-  gulp.watch([srcPath + "/**/*"], ['styles'], reload);
+  gulp.watch(srcFiles, ['styles'], reload);
 });

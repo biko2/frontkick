@@ -4,38 +4,32 @@ var gulp = require('gulp'),
   bower = require('gulp-bower'),
   mainBowerFiles = require('main-bower-files'),
   runSequence = require('run-sequence'),
-  del = require('del');
+  del = require('del'),
+  config = require('../config.js');
 
-var vendorPath = 'vendor',
-  bowerComponentsPath = 'bower_components';
+var destPath = config.bower.dest,
+  bowerComponentsPath = config.bower.src;
 
 gulp.task('bower', function(done) {
-  runSequence(['bower:update', 'bower:clean:vendor'], 'bower:sync', done);
+  runSequence(['bower:update', 'bower:clean:dest'], 'bower:cp', done);
 });
 
-// Sincroniza los ficheros de bower con la carpeta vendor del theme
-gulp.task('bower:sync', function() {
-  console.log(mainBowerFiles());
+gulp.task('bower:cp', function() {
   return gulp
     .src(mainBowerFiles(), { base: bowerComponentsPath})
-    .pipe(gulp.dest(vendorPath));
+    .pipe(gulp.dest(destPath));
 });
 
-// Actualiza bower
 gulp.task('bower:update', function() {
   return bower().pipe(gulp.dest(bowerComponentsPath));
 });
 
-// Borra la carpeta de los componentes de bower
-gulp.task('bower:clean', function(done) {
+gulp.task('bower:clean:src', function(done) {
   del([
     bowerComponentsPath + "/**"
   ], done);
 });
 
-// Borra la carpeta vendor
-gulp.task('bower:clean:vendor', function(done) {
-  del([
-    vendorPath + "/**"
-  ], done);
+gulp.task('bower:clean:dest', function(done) {
+  del(destPath, done);
 });

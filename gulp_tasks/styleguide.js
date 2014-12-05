@@ -5,7 +5,10 @@ var gulp = require('gulp'),
     nn = require('node-notifier'),
     browserSync = require('browser-sync'),
     reload = browserSync.reload,
-    $ = require('gulp-load-plugins')();
+    $ = require('gulp-load-plugins')(),
+    config = require('../config.js');
+
+var watchFiles = [config.styleguide.srcFiles, config.styles.srcFiles];
 
 gulp.task('styleguide', function(done) {
     var hologram = spawn('hologram', [], { stdio: 'inherit' });
@@ -23,6 +26,6 @@ gulp.task('styleguide', function(done) {
 });
 
 gulp.task('styleguide:watch', function () {
-  gulp.watch(["doc_assets/**/*", "scss/**/*"],
+  gulp.watch(watchFiles,
     ['styles', 'styleguide', reload]);
 });

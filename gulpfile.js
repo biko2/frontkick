@@ -3,14 +3,10 @@
 var gulp = require('gulp'),
     browserSync = require('browser-sync'),
     runSequence = require('run-sequence'),
-    requireDir = require('require-dir')('./gulp_tasks'),
-    _ = require('underscore');
-
-var config = require('./config.json');
-var local_config = require('./config_overrides.json');
-_.extend(config, local_config);
+    requireDir = require('require-dir')('./gulp_tasks');
 
 var $ = require('gulp-load-plugins')();
+var config = require('./config.js');
 
 gulp.task('browser-sync', function() {
     browserSync({
